@@ -8,9 +8,7 @@ function App() {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <Item nome="Leite" preco="R$ 5,00" />
-      <Item nome="Pão" preco="R$ 3,00" />
-
+      <Item />
       <button onClick={() => setCount(count + 1)}>
         Clique para adicionar {count}
       </button>
