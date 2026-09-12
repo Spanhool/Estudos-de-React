@@ -1,0 +1,104 @@
+- JSX
+
+O nome da função sempre vai ser o nome do componente
+
+ESTRUTURA:
+export function (nome função) () {
+  return (
+    componentes HTML
+  )
+}
+
+- Componentes
+
+- Criar pasta componentes para criar cada componente
+export function Button () {
+  return (
+    <button> Clique aqui </button>
+  )
+}
+
+- Para importar ficaria da seguinte maneira
+import {Button} from (caminho ate a pasta)
+export function App () {
+  return (
+    <Button/>
+  )
+}
+
+- Um componente nao pode ter dois elementos pais
+JEITO ERRADO X
+export function App () {
+  return (
+    <Button/> <Button/>
+  )
+}
+
+JEITO CORRETO
+export function App () {
+  return (
+    <div>
+      <Button/>
+      <Button/>
+    </div>
+  )
+}
+
+- Props
+
+export function Button (props) {
+  return (
+    <button> {props.text} <button/>
+  )
+}
+
+na hora que for usar o componente button e quiser colocar algo escrito nele use desta maneira a seguir
+
+export function App () {
+  return (
+      <Button text="Clique aqui"/>
+  )
+}
+
+Outra forma de uso da props
+
+function Nota({ titulo, categoria }) {
+  return <p>{titulo} - {categoria}</p>
+}
+
+export function App () {
+  return (
+      <Nota titulo="Matematica" categoria="Exatas"/>
+  )
+}
+
+- UseState
+
+import {useState} from "react"
+
+export function App () {
+  const [count, setCount] = useState(0)
+
+  return (
+      <Button text="Adicionar" onClick={() => setCount(count + 1)}/>
+      <Button text="Remover" onClick={() => setCount(count - 1)}/>
+  )
+}
+
+
+export function App () {
+  const [count, setCount] = useState(0)
+
+  function handleAdd() {
+    setCount(count + 1)
+  }
+
+  function handleRemove() {
+    setCount(count - 1)
+  }
+
+  return (
+      <Button text="Adicionar" onClick={handleAdd}/>
+      <Button text="Remover" onClick={handleRemove}/>
+  )
+}
