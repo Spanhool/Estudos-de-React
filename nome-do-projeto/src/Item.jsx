@@ -5,6 +5,7 @@ export function Item() {
     { nome: "Pão", preco: 10 },
     { nome: "Leite", preco: 8 },
     { nome: "Bolacha", preco: 7 },
+    { nome: "Farinha", preco: 9 },
   ]);
 
   function removerProduto(nomeProduto) {
