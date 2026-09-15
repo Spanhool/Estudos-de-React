@@ -10,7 +10,7 @@ function App() {
     <div>
       <Item />
       <button onClick={() => setCount(count + 1)}>
-        Clique para adicionar {count}
+        Clique para adicionar mais um item {count}
       </button>
     </div>
   );
